@@ -13,7 +13,7 @@ user the same experience and satisfaction a real ludo board would give.
 * three.js
 
 ## Wireframe
-![Wireframe](LudoImage.png)
+![Wireframe](LudoImage.jpg)
 
 ## Plan Breakdown
 - [ ] Day 1 - Create board model with Three.js 
