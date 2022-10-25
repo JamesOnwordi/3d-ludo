@@ -28,14 +28,14 @@ user the same experience and satisfaction a real ludo board would give.
 - [ ] As a user, I want to be able to interact with the dice
 
 ## MVP Checklist
-* Have a 3D game board 
-* Create 3D players
-* Movable players 
-* A 3D dice
-* Board Rotation 
-* An end zone players work towards
-* Animations for players movement
-* A reset button to re-allign users view
+- [ ] Have a 3D game board 
+- [ ] Create 3D players
+- [ ] Movable players 
+- [ ] A 3D dice
+- [ ] Board Rotation 
+- [ ] An end zone players work towards
+- [ ] Animations for players movement
+- [ ] A reset button to re-allign users view
 
 ## Future Goal
-* Transform the concept of the game
+- [ ] Transform the concept of the game
