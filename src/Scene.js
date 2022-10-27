@@ -10,26 +10,145 @@ import Game from './Game'
 export default function Scene({ ...props }) {
   const { nodes, materials } = useSpline('https://prod.spline.design/kOg1I8r23bnFnDbb/scene.splinecode')
   const state = useThree()
-  let value = 1
-  const action = (e) =>{
-    console.log(state.scene)
-    console.log(state.scene.getObjectByName(`Path${value}`))
-    console.log(value)
-    e.object.position.x =state.scene.getObjectByName(`Path${value}`).position.x
-    e.object.position.z =state.scene.getObjectByName(`Path${value}`).position.z
-    console.log(value)
-    value = value +1
-    console.log(value)
+  
+
+
+  const blue = {
+    inside: 4,
+    outside: 0,
+    finished: 0,
+    // 1,2,3,4
+    position: [14, 14, 14, 14],
+    name: 'b'
   }
+  const red = {
+      inside: 4,
+      outside: 0,
+      finished: 0,
+      position: [40, 40, 40, 40],
+      name: 'r',
+  }
+  const yellow = {
+      inside: 4,
+      outside: 0,
+      finished: 0,
+      position: [1, 1, 1, 1],
+      name: 'y'
+  }
+  const green = {
+      inside: 4,
+      outside: 0,
+      finished: 0,
+      position: [27, 27, 27, 27],
+      name: 'g'
+  }
+
+  let player = yellow
+  let diceValue =12
+
   const diceRoll = (e) =>{
     console.log(e)
     rollDice()
+    play()
   }
   // function returns a dice randon dice value
   function rollDice() {
     const diceOption = [1, 2, 3, 4, 5, 6]
     let dice = diceOption[Math.floor(Math.random() * 6)]
+    diceValue = dice
     return dice
+  }
+  
+  // returns the starting position of each player when called
+  function getPosition(value) {
+    switch (value) {
+        case ("1"):
+            return player.position[0]
+        case ("2"):
+            return player.position[1]
+        case ("3"):
+            return player.position[2]
+        case ("4"):
+            return player.position[3]
+        default:
+            console.log("error")
+    }
+  }
+  
+  // changes player 
+  function changePlayer() {
+    if (player == blue)
+        player = green
+    else if (player == green)
+        player = red
+    else if (player == red)
+        player = yellow
+    else
+        player = blue
+  }
+  // make a move and update position in object
+  function moveToken(i){
+    console.log(player.name)
+    console.log(i)
+    console.log(player.position[i])
+    switch (player.name) {
+      case ("y"):
+        player.position[i] = player.position[i] + diceValue
+        break
+      case ("b"):
+        if (player.position[i] + diceValue > 52)
+          player.position[i] = player.position[i] + diceValue -52
+        else 
+          player.position[i] = player.position[i] + diceValue
+        break
+      case ("g"):
+        if (player.position[i] + diceValue > 52)
+          player.position[i] = player.position[i] + diceValue -52
+        else 
+          player.position[i] = player.position[i] + diceValue
+        break
+      case ("r"):
+        if (player.position[i] + diceValue > 52)
+          player.position[i] = player.position[i] + diceValue -52
+        else 
+          player.position[i] = player.position[i] + diceValue
+        break
+      default:
+          console.log("error")
+  }
+}
+  // control for eventListener
+  const action = (e) =>{
+    // restriction for tokens eventListeners
+    console.log(e.object.name)
+    if(e.object.name.includes(player.name)){
+      console.log('only yellow can play')
+      console.log(state.scene)
+      console.log(e.object.name.substring(1,2))
+      // for getting the position of each token
+      let index = e.object.name.substring(1,2) 
+      moveToken(index-1)
+      let value = getPosition(index)
+      console.log(state.scene.getObjectByName(`Path${value}`))  
+      e.object.position.x =state.scene.getObjectByName(`Path${value}`).position.x
+      e.object.position.z =state.scene.getObjectByName(`Path${value}`).position.z
+      // ends here
+      console.log(value)
+      value = value +1
+      console.log(value)
+      changePlayer()
+    }
+    
+  }
+
+  const play= () =>{
+    console.log(player)
+    if(diceValue == 6 ){
+      
+
+    }
+    changePlayer()
+
   }
 
   
@@ -38,9 +157,9 @@ export default function Scene({ ...props }) {
       <color attach="background" args={['#fef3e2']} />
       <group {...props} dispose={null}>
         <mesh
-          name="yellow4"
-          geometry={nodes.yellow4.geometry}
-          material={materials['yellow4 Material']}
+          name="y4"
+          geometry={nodes.y4.geometry}
+          material={materials['y4 Material']}
           castShadow
           receiveShadow
           position={[-861.41, 132.35, 1386.42]}
@@ -48,9 +167,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="yellow3"
-          geometry={nodes.yellow3.geometry}
-          material={materials['yellow3 Material']}
+          name="y3"
+          geometry={nodes.y3.geometry}
+          material={materials['y3 Material']}
           castShadow
           receiveShadow
           position={[-1229.15, 132.35, 1386.42]}
@@ -58,9 +177,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="yellow2"
-          geometry={nodes.yellow2.geometry}
-          material={materials['yellow2 Material']}
+          name="y2"
+          geometry={nodes.y2.geometry}
+          material={materials['y2 Material']}
           castShadow
           receiveShadow
           position={[-1229.15, 132.35, 772.39]}
@@ -68,9 +187,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="yellow1"
-          geometry={nodes.yellow1.geometry}
-          material={materials['yellow1 Material']}
+          name="y1"
+          geometry={nodes.y1.geometry}
+          material={materials['y1 Material']}
           castShadow
           receiveShadow
           position={[-861.41, 132.35, 772.39]}
@@ -78,9 +197,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="blue4"
-          geometry={nodes.blue4.geometry}
-          material={materials['blue4 Material']}
+          name="b4"
+          geometry={nodes.b4.geometry}
+          material={materials['b4 Material']}
           castShadow
           receiveShadow
           position={[-861.41, 132.35, -209.66]}
@@ -88,9 +207,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="blue 3"
-          geometry={nodes['blue 3'].geometry}
-          material={materials['blue 3 Material']}
+          name="b3"
+          geometry={nodes['b3'].geometry}
+          material={materials['b3 Material']}
           castShadow
           receiveShadow
           position={[-1229.15, 132.35, -209.66]}
@@ -98,9 +217,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="blue2"
-          geometry={nodes.blue2.geometry}
-          material={materials['blue2 Material']}
+          name="b2"
+          geometry={nodes.b2.geometry}
+          material={materials['b2 Material']}
           castShadow
           receiveShadow
           position={[-1229.15, 132.35, -823.69]}
@@ -108,9 +227,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="blue1"
-          geometry={nodes.blue1.geometry}
-          material={materials['blue1 Material']}
+          name="b1"
+          geometry={nodes.b1.geometry}
+          material={materials['b1 Material']}
           castShadow
           receiveShadow
           position={[-861.41, 132.35, -823.69]}
@@ -118,9 +237,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="green4"
-          geometry={nodes.green4.geometry}
-          material={materials['green4 Material']}
+          name="g4"
+          geometry={nodes.g4.geometry}
+          material={materials['g4 Material']}
           castShadow
           receiveShadow
           position={[615.74, 132.35, -209.66]}
@@ -128,9 +247,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="green3"
-          geometry={nodes.green3.geometry}
-          material={materials['green3 Material']}
+          name="g3"
+          geometry={nodes.g3.geometry}
+          material={materials['g3 Material']}
           castShadow
           receiveShadow
           position={[248, 132.35, -209.66]}
@@ -138,9 +257,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="green2"
-          geometry={nodes.green2.geometry}
-          material={materials['green2 Material']}
+          name="g2"
+          geometry={nodes.g2.geometry}
+          material={materials['g2 Material']}
           castShadow
           receiveShadow
           position={[248, 132.35, -823.69]}
@@ -148,9 +267,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="green1"
-          geometry={nodes.green1.geometry}
-          material={materials['green1 Material']}
+          name="g1"
+          geometry={nodes.g1.geometry}
+          material={materials['g1 Material']}
           castShadow
           receiveShadow
           position={[615.74, 132.35, -823.69]}
@@ -158,9 +277,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="Red1"
-          geometry={nodes.Red1.geometry}
-          material={materials['Red1 Material']}
+          name="r1"
+          geometry={nodes.r1.geometry}
+          material={materials['r1 Material']}
           castShadow
           receiveShadow
           position={[615.74, 132.35, 1408.09]}
@@ -168,9 +287,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="Red2"
-          geometry={nodes.Red2.geometry}
-          material={materials['Red2 Material']}
+          name="r2"
+          geometry={nodes.r2.geometry}
+          material={materials['r2 Material']}
           castShadow
           receiveShadow
           position={[248, 132.35, 1408.09]}
@@ -178,9 +297,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="Red3"
-          geometry={nodes.Red3.geometry}
-          material={materials['Red3 Material']}
+          name="r3"
+          geometry={nodes.r3.geometry}
+          material={materials['r3 Material']}
           castShadow
           receiveShadow
           position={[248, 132.35, 794.05]}
@@ -188,9 +307,9 @@ export default function Scene({ ...props }) {
           onClick={action}
         />
         <mesh
-          name="Red4"
-          geometry={nodes.Red4.geometry}
-          material={materials['Red4 Material']}
+          name="r4"
+          geometry={nodes.r4.geometry}
+          material={materials['r4 Material']}
           castShadow
           receiveShadow
           position={[615.74, 132.35, 794.05]}
@@ -206,6 +325,7 @@ export default function Scene({ ...props }) {
           position={[1841.1, 297.28, 1016.15]}
           rotation={[-Math.PI, 1.54, -Math.PI]}
           scale={1}
+          onClick ={diceRoll}
         />
         <mesh
           name="Shape"
@@ -358,9 +478,9 @@ export default function Scene({ ...props }) {
           scale={[1.41, 0.83, 0.95]}
         />
         <mesh
-          name=" Path11"
-          geometry={nodes[' Path11'].geometry}
-          material={materials[' Path11 Material']}
+          name="Path11"
+          geometry={nodes['Path11'].geometry}
+          material={materials['Path11 Material']}
           castShadow
           receiveShadow
           position={[-1488.97, -58.76, 496.18]}
