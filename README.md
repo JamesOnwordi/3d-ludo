@@ -23,7 +23,7 @@ finish according to the rolls of a dice.
 
 ## User Stories
 - [x] As a user, I want to be able to interact with the characters
-- [x] As a user, I want to be able to interact with the board to adjust the camera's view
+- [ ] As a user, I want to be able to interact with the board to adjust the camera's view
 - [x] As a user, I want to be able to interact with the dice
 
 ## MVP Checklist
