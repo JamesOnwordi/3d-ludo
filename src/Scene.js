@@ -5,7 +5,7 @@
 import { useThree } from "@react-three/fiber";
 import useSpline from "@splinetool/r3f-spline";
 import { PerspectiveCamera } from "@react-three/drei";
-import React, {useState} from 'react'
+import {useState} from 'react'
 
 export default function Scene({ ...props }) {
   const { nodes, materials } = useSpline(
@@ -65,7 +65,7 @@ export default function Scene({ ...props }) {
       diceValue = dice;
       display.innerText = ` ${player.show} has rolled a ${dice}, choose a token to make a move`
       if (dice != 6 && player.inside == 4) {
-        display.innerText = `${player.show}'s turn has been skipped`
+        display.innerText = `${player.show} rolled a ${dice} turn has been skipped`
         changePlayer();
         canRoll = true;
       }
@@ -531,13 +531,13 @@ export default function Scene({ ...props }) {
         />
         <group
           name="dice"
-          onClick={diceRoll}
-          position={[2244.87, 917.27, 99.54]}
-          rotation={[2.05, -0.14, 3.14]}
+          position={[117.87, 423.46, 206.18]}
+          rotation={[1.67, -0.07, 2.87]}
           scale={[0.97, 0.95, 0.97]}
         >
           <mesh
             name="box"
+            onClick={diceRoll}
             geometry={nodes.box.geometry}
             material={materials.dice}
             castShadow
@@ -548,8 +548,8 @@ export default function Scene({ ...props }) {
           <group name="6" position={[-2.87, -103.32, 1.33]}>
             <mesh
               name="17"
-              geometry={nodes["17"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['17'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[57.99, 0, -59.71]}
@@ -558,8 +558,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="16"
-              geometry={nodes["16"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['16'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[57.99, 0, -0.66]}
@@ -568,8 +568,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="15"
-              geometry={nodes["15"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['15'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[57.99, 0, 59.71]}
@@ -578,8 +578,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="14"
-              geometry={nodes["14"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['14'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[-57.99, 0, -59.71]}
@@ -588,8 +588,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="13"
-              geometry={nodes["13"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['13'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[-57.99, 0, -0.66]}
@@ -598,8 +598,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="12"
-              geometry={nodes["12"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['12'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[-57.99, 0, 59.71]}
@@ -610,8 +610,8 @@ export default function Scene({ ...props }) {
           <group name="5" position={[104.25, 3.92, 0.11]}>
             <mesh
               name="11"
-              geometry={nodes["11"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['11'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[0, -0.11, -2.6]}
@@ -620,8 +620,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="10"
-              geometry={nodes["10"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['10'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[0, 58.74, -57.35]}
@@ -630,8 +630,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="9"
-              geometry={nodes["9"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['9'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[0, -59.39, -58.97]}
@@ -640,8 +640,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="8"
-              geometry={nodes["8"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['8'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[0, -58.3, 58.97]}
@@ -650,8 +650,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="7"
-              geometry={nodes["7"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['7'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[0, 59.39, 58.97]}
@@ -662,8 +662,8 @@ export default function Scene({ ...props }) {
           <group name="4" position={[2.65, 103.32, 0.13]}>
             <mesh
               name="21"
-              geometry={nodes["21"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['21'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[53.69, 0, 53.09]}
@@ -671,8 +671,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="20"
-              geometry={nodes["20"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['20'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[-53.69, 0, 53.09]}
@@ -680,8 +680,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="19"
-              geometry={nodes["19"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['19'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[53.69, 0, -53.09]}
@@ -689,8 +689,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="18"
-              geometry={nodes["18"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['18'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[-53.69, 0, -53.09]}
@@ -700,8 +700,8 @@ export default function Scene({ ...props }) {
           <group name="3" position={[-4.18, 0.93, -103.36]}>
             <mesh
               name="51"
-              geometry={nodes["51"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['51'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[-58.92, -61.36, 0]}
@@ -710,8 +710,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="41"
-              geometry={nodes["41"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['41'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[2.99, 0, 0]}
@@ -720,8 +720,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="31"
-              geometry={nodes["31"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['31'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[58.92, 61.36, 0]}
@@ -732,8 +732,8 @@ export default function Scene({ ...props }) {
           <group name="2" position={[-104.25, 0.07, 3.39]}>
             <mesh
               name="61"
-              geometry={nodes["61"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['61'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[0, -57.34, 57.34]}
@@ -742,8 +742,8 @@ export default function Scene({ ...props }) {
             />
             <mesh
               name="22"
-              geometry={nodes["22"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['22'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[0, 57.34, -57.34]}
@@ -754,8 +754,8 @@ export default function Scene({ ...props }) {
           <group name="1" position={[1.63, 0.56, 103.36]}>
             <mesh
               name="110"
-              geometry={nodes["110"].geometry}
-              material={materials[" points"]}
+              geometry={nodes['110'].geometry}
+              material={materials[' points']}
               castShadow
               receiveShadow
               position={[0, 0, 0]}
@@ -764,6 +764,7 @@ export default function Scene({ ...props }) {
             />
           </group>
         </group>
+        
         <mesh
           name="g4"
           onClick={action}

@@ -116,7 +116,11 @@ body,
   }
 }
 .displayBox {
-  background-color: hotpink;
+  background-color: rgba(255, 224, 189, 0.886);
   text-align: center;
   left: 50%;
+  
+}
+h1{
+  margin: auto 0;
 }
