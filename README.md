@@ -9,7 +9,8 @@ finish according to the rolls of a dice.
 * HTML
 * CSS
 * JavaScript
-* three.js
+* react-tree-fiber
+* spline
 
 ## Wireframe
 ![Wireframe](LudoImage.jpg)
