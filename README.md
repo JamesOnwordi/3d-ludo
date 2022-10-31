@@ -15,7 +15,7 @@ finish according to the rolls of a dice.
 ![Wireframe](LudoImage.jpg)
 
 ## Plan Breakdown
-- [*] Day 1 - Create board model with Three.js 
+- [ * ] Day 1 - Create board model with Three.js 
 - [*] Day 2 - Create characters and Dice model with Three.js
 - [*] Day 3 - Implement interaction between models and work on pathways for characters
 - [*] Day 4 - Complete pathways for characters movement
