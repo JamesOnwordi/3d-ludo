@@ -9,7 +9,7 @@ finish according to the rolls of a dice.
 * HTML
 * CSS
 * JavaScript
-* react-tree-fiber
+* react-three-fiber
 * spline
 
 ## Wireframe
