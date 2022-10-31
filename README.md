@@ -15,24 +15,24 @@ finish according to the rolls of a dice.
 ![Wireframe](LudoImage.jpg)
 
 ## Plan Breakdown
-- [ * ] Day 1 - Create board model with Three.js 
-- [*] Day 2 - Create characters and Dice model with Three.js
-- [*] Day 3 - Implement interaction between models and work on pathways for characters
-- [*] Day 4 - Complete pathways for characters movement
-- [*] Day 5 - Tidy up project for presentation
+- [x] Day 1 - Create board model with Three.js 
+- [x] Day 2 - Create characters and Dice model with Three.js
+- [x] Day 3 - Implement interaction between models and work on pathways for characters
+- [x] Day 4 - Complete pathways for characters movement
+- [x] Day 5 - Tidy up project for presentation
 
 ## User Stories
-- [ ] As a user, I want to be able to interact with the characters
-- [ ] As a user, I want to be able to interact with the board to adjust the camera's view
-- [ ] As a user, I want to be able to interact with the dice
+- [x] As a user, I want to be able to interact with the characters
+- [x] As a user, I want to be able to interact with the board to adjust the camera's view
+- [x] As a user, I want to be able to interact with the dice
 
 ## MVP Checklist
-- [*] Have a 3D game board 
-- [*] Create 3D players
-- [*] Movable players 
-- [*] A 3D dice
+- [x] Have a 3D game board 
+- [x] Create 3D players
+- [x] Movable players 
+- [x] A 3D dice
 - [ ] Board Rotation 
-- [*] An end zone players work towards
+- [x] An end zone players work towards
 - [ ] Animations for players movement
 - [ ] A reset button to re-allign users view
 
