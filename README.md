@@ -5,6 +5,13 @@
 Ludo is a strategy board game for two to four players, Players race with their four tokens from start to
 finish according to the rolls of a dice.
 
+## Installation Instructions
+If you would like to install this app locally, feel free to follow these instructions:
+1. fork and clone this repo
+2. open a terminal and cd to the directory you cloned the repo into
+3. run `npm install` to install all dependencies
+5. run `npm run start` 
+
 ## Tech Being Used
 * HTML
 * CSS
