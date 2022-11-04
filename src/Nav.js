@@ -16,8 +16,8 @@ export default function Nav(){
     }
     return(
         <div className="absolute">
-            <div id="mySidebar" class="sidebar">
-                <a href="javascript:void(0)" class="closebtn" onClick={closeNav}>&times;</a>
+            <div id="mySidebar" className="sidebar">
+                <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
                 <a href="#">Resume</a>
                 <a href="#">Reset</a>
                 <a href="#">Instructions</a>
@@ -25,7 +25,7 @@ export default function Nav(){
                 </div>
 
                 <div id="main">
-                <button class="openbtn" id="open" onClick={openNav} onTouchMove={openNav}>&#9776;</button>
+                <button className="openbtn" id="open" onClick={openNav} onTouchMove={openNav}>&#9776;</button>
             </div>
         </div>
     )

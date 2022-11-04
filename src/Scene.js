@@ -12,10 +12,10 @@ export default function Scene({ ...props }) {
     "https://prod.spline.design/kOg1I8r23bnFnDbb/scene.splinecode"
   );
   const state = useThree();
-
+  
   // const {display} =useState(document.getElementById("display"));
   const display = document.getElementById("display")
-  console.log(display); 
+  // console.log(display); 
   const blue = {
     inside: 4,
     outside: 0,
@@ -412,7 +412,7 @@ export default function Scene({ ...props }) {
   }
   // control for eventListener
   const action = (e) => {
-    console.log(diceValue);
+    console.log(nodes);
     // restriction for tokens eventListeners
     console.log(e.object.name);
     if (e.object.name.includes(player.name) && diceValue) {
